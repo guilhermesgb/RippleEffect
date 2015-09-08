@@ -248,13 +248,13 @@ public class RippleView extends RelativeLayout {
             radiusMax = Math.max(WIDTH, HEIGHT);
 
             if (rippleType != 2)
-                radiusMax /= 2;
+                radiusMax *= 0.95;
 
             radiusMax -= ripplePadding;
 
             if (isCentered || rippleType == 1) {
-                this.x = getMeasuredWidth() / 2;
-                this.y = getMeasuredHeight() / 2;
+                this.x = getMeasuredWidth() * 0.95f;
+                this.y = getMeasuredHeight() * 0.95f;
             } else {
                 this.x = x;
                 this.y = y;
@@ -327,7 +327,7 @@ public class RippleView extends RelativeLayout {
      */
     @ColorRes
 	public void setRippleColor(int rippleColor) {
-		this.rippleColor = getResources().getColor(rippleColor);
+		this.rippleColor = rippleColor;
 	}
 
 	public int getRippleColor() {
